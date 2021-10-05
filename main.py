@@ -13,13 +13,10 @@ def get_largest_prime_below(n):
         if is_prime(i):
             return i
 def test_get_largest_prime_below():
-    while True:
-        if get_largest_prime_below(100) == 97:
-            pass
-        if get_largest_prime_below(17) == 17:
-            pass
-        if get_largest_prime_below(23) == 23:
-            pass
+        assert get_largest_prime_below(100) == 97
+        assert get_largest_prime_below(17) == 17
+        assert get_largest_prime_below(23) == 23
+
 
 
 
@@ -31,12 +28,10 @@ def get_age_in_days(birthday):
         data_nasterii_int_lst.append(int(fiecare_data))
     return (2021-data_nasterii_int_lst[2]) * 365 + (data_nasterii_int_lst[1] - 10) * 30 + data_nasterii_int_lst[0] - 1
 def test_get_age_in_days():
-    if get_age_in_days('07/03/2002')==6731:
-        pass
-    if get_age_in_days('07/04/1999')==7856:
-        pass
-    if get_age_in_days('30/11/200')== 664724:
-        pass
+    assert get_age_in_days('07/03/2002') == 6731
+    assert get_age_in_days('07/04/1999') == 7856
+    assert get_age_in_days('30/11/200') == 664724
+
 
 def main():
     print("1. Ultimul număr prim mai mic decât un număr dat.")
@@ -53,6 +48,7 @@ def main():
         elif optiune == 'x':
              break
 
-main()
 test_get_age_in_days()
 test_get_largest_prime_below()
+main()
+
