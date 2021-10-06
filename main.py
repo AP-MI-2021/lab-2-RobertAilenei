@@ -26,22 +26,25 @@ def get_age_in_days(birthday):
     data_nasterii_int_lst = []
     for fiecare_data in data_nasterii_str_lst:
         data_nasterii_int_lst.append(int(fiecare_data))
-    return (2021-data_nasterii_int_lst[2]) * 365 + (data_nasterii_int_lst[1] - 10) * 30 + data_nasterii_int_lst[0] - 1
+    zile_anii_bisecti=505-(data_nasterii_int_lst[2]//4)
+    return zile_anii_bisecti+(2021-data_nasterii_int_lst[2]) * 365+ (data_nasterii_int_lst[1] - 10) * 30 + data_nasterii_int_lst[0] - 1
 
 
 def test_get_age_in_days():
-    assert get_age_in_days('07/03/2002') == 6731
-    assert get_age_in_days('07/04/1999') == 7856
-    assert get_age_in_days('30/11/200') == 664724
+   assert get_age_in_days('07/03/2002') == 6736
+   assert get_age_in_days('07/04/1999') == 7862
+   assert get_age_in_days('30/11/200') == 665179
 
 
 
 def get_goldbach(n):
-    if n%2 == 1:
+    if n==5:
+        return 2,3
+    elif n==4:
+        return 2,2
+    elif n%2 == 1:
         return None
     else:
-        if n==4:
-            return 2,2
         p1=3
         p2=n-3
         while p1<p2:
